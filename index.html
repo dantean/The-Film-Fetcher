@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Film Fetcher</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css"/>
-    <link rel="stylesheet" href="./assets/css/custom.css"/>
 </head>
 <body>
-    <!-- put search bar below -->
-    <div id="movieSearch">
-        <h2>The Film Fetcher!</h2>
-       
-            <input type="text" id="searchInput" name="movie" placeholder="Search for movies...">
-            <button id="search-btn" type="submit">Search</button><br><br>  
-         
+    <div id="title">  
+    <p class="title is-2">The Film Fetcher</p>
+    <p class="subtitle is-5">By Rasmi R. and Joseph M.</p>
     </div>
 
-   
-    <main id="favoritesList">
-        <div id="display-movies" class="columns poster-grid is-flex-direction-row is-flex-wrap-wrap is-align-content-flex-start">
-           
+    <div class="tile is-ancestor">
+        <div class="tile is-8" id="dashboard">
+            <div id="movie-dashboard" class="columns poster-grid is-flex-direction-row is-flex-wrap-wrap is-align-content-flex-start">
+        </div>
+      </div>
+        <div class="tile is-4">
+        <p>Viewed history</p>
+        </div>
+      <script src="./assets/js/displayDashboard.js"></script>
+      </div>
+    <main id="dashboard">
+        <div id="movie-dashboard" style="width:300px" class="columns poster-grid is-flex-direction-row is-flex-wrap-wrap is-align-content-flex-start">
         </div> 
+
        
     </main>
-    <script src="./assets/js/script.js"></script>
     <script src="./assets/js/displayMovies.js"></script>
-    <script src="./assets/js/movieReview.js"></script>
-
 </body>
 </html>

@@ -1,5 +1,6 @@
 var reviewEl = document.getElementById("review")
 var reviewBodyEl = document.getElementById("review-body")
+var selector = document.getElementById("selector")
 // https://metacriticapi.p.rapidapi.com/movies/new?filter=date
 
 function onloadReview(){
@@ -39,5 +40,12 @@ function onloadReview(){
     })
 }
 }
+function changeClass(event){
+var currentReviewTitle=event.target
+currentReviewTitle.classList.remove="is-active"
+
+}
 window.addEventListener("load", onloadReview)
 //displayMoviesEl.addEventListener("click", movieReview)
+
+selector.addEventListener("click", changeClass)
