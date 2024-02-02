@@ -18,7 +18,7 @@ function displayDashboard() {
         for(var i=0; i <data.results.length; i++) {
             var posterID = data.results[i].poster_path
             posterID = posterID.slice(1)
-        movieDashboardEl.innerHTML += `<a class="column poster-tile is-2" style="width:180px"><img src="https://image.tmdb.org/t/p/original${data.results[i].poster_path}" placeholder="${data.results[i].title}" id="${posterID}" style="width:180px"/></a>`
+        movieDashboardEl.innerHTML += `<a class="column poster-tile is-2"><img src="https://image.tmdb.org/t/p/original${data.results[i].poster_path}" placeholder="${data.results[i].title}" id="${posterID}" style="width:180px"/></a>`
         }
     })
 }

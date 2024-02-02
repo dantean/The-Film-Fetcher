@@ -2,8 +2,8 @@
 <html>
 <head>
 <title>Movie Review</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
 <link rel="stylesheet" href="./assets/css/style.css"/>
-<link rel="stylesheet" href="./assets/css/custom.css"/>
 </head>
 <body>
 <main>
@@ -11,24 +11,17 @@
     <section class="hero is-info is-small">
         <div class="hero-body">
             <section class="columns" id="review-body">
-               <!-- <div class="column is-two-fifths">
-                    <img src="https://image.tmdb.org/t/p/original/7lTnXOy0iNtBAdRP3TZvaKJ77F6.jpg" style="width:200px;height:230px"/>
-                </div>
-                <div class="column">
-                    <h1 class="title has-text-centered">Title</h1>
-                    <p class="subtitle">Subtitle</p>
-                </div>-->
             </section>
         </div>
       
         <div class="hero-foot">
           <nav class="tabs is-boxed is-fullwidth">
-            <div class="container">
+            <div class="container" id="selector">
               <ul>
-                <li class="is-active">
+                <li class="is-active" id="critic-review">
                   <a href="#critic-review">Critic Review</a>
                 </li>
-                <li>
+                <li id="user-review">
                   <a>User Review</a>
                 </li>
               </ul>
@@ -43,7 +36,6 @@
 
    </main>
     <script src="./assets/js/movieReview.js"></script>
-    <!--<script SRC="./assets/js/displayDashboard.js"></script>-->
 </body>
 
 </html>
