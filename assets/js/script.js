@@ -2,6 +2,7 @@ var omdbAPIKey = "e1632ca0"
 var searchBtnEl = document.getElementById("search-btn")
 var inputMovieNameEl = document.getElementById("searchInput")
 var displayMoviesEl = document.getElementById("display-movies")
+//var reviewEl = document.getElementById("review")
 
 
 function retrieveDataByTitle(movieName) {
@@ -25,7 +26,7 @@ function retrieveDataBySearch(movieName) {
     })
     .then(function(data) {
         console.log(data)
-
+        displayMoviesEl.innerHTML = ""
        for(i=0; i < data.Search.length; i++) {
             if(data.Search[i].Poster !== 'N/A') {
                 displayMoviesEl.innerHTML += `<div class="column">

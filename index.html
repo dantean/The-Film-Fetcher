@@ -5,27 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Film Fetcher</title>
     <link rel="stylesheet" href="./assets/css/style.css"/>
+    <link rel="stylesheet" href="./assets/css/custom.css"/>
 </head>
 <body>
     <!-- put search bar below -->
     <div id="movieSearch">
         <h2>The Film Fetcher!</h2>
-        <!--<form id="searchForm">-->
+       
             <input type="text" id="searchInput" name="movie" placeholder="Search for movies...">
-            <button id="search-btn" type="submit">Search</button>
-        <!--</form>-->
+            <button id="search-btn" type="submit">Search</button><br><br>  
+         
     </div>
 
-    <!-- favorites list goes below (much later) -->
+   
     <main id="favoritesList">
-        <h2>Favorites List (coming soon)</h2>
-        <div id="favoritesContainer">
-            <img src="assets/images/favs.png">
-        </div>
-        <div id="display-movies" class="columns">
-            
-        </div>    
+        <div id="display-movies" class="columns poster-grid is-flex-direction-row is-flex-wrap-wrap is-align-content-flex-start">
+           
+        </div> 
+       
     </main>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/displayMovies.js"></script>
+    <script src="./assets/js/movieReview.js"></script>
+
 </body>
 </html>
