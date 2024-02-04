@@ -1,6 +1,10 @@
 var reviewEl = document.getElementById("review")
 var reviewBodyEl = document.getElementById("review-body")
-var selector = document.getElementById("selector")
+var reviewBlkEl = document.getElementById("review-blk")
+var criticReviewEl = document.getElementById("critic-review")
+var userReviewEl = document.getElementById("user-review")
+var criticBlkEl = document.getElementById("critic-blk")
+var userBlkEl = document.getElementById("user-blk")
 // https://metacriticapi.p.rapidapi.com/movies/new?filter=date
 
 function onloadReview(){
@@ -10,6 +14,7 @@ function onloadReview(){
     console.log(movieString)
     if(movieString) {
     var movieName = movieString.replace(/\s+/g, '-')
+    criticBlkEl.classList.remove("hide")
 
     var url = `https://metacriticapi.p.rapidapi.com/movies/${movieName}?reviews=true`;
     //var url = `https://metacriticapi.p.rapidapi.com/movies/${movieName}`
@@ -37,15 +42,52 @@ function onloadReview(){
         <p class="subtitle"><h5 class="subtitle">Description :</h5> ${data.description}</p>
         <p></p>
     </div>`
+
+    for(var i=0; i < data.recentReviews.length; i++) {
+        criticBlkEl.innerHTML += `<p><h4>${data.recentReviews[i].name}</h4>, ${data.recentReviews[i].date}, Grade: ${data.recentReviews[i].grade}</p><p>${data.recentReviews[i].body}</p><br>`
+    }
+    for(var i=0; i < data.recentUserReviews.length; i++) {
+        userBlkEl.innerHTML += `<p><h4>${data.recentUserReviews[i].name}</h4>, ${data.recentUserReviews[i].date}, Grade: ${data.recentUserReviews[i].grade}</p><p>${data.recentUserReviews[i].body}</p><br>`
+    }
+
     })
 }
 }
 function changeClass(event){
-var currentReviewTitle=event.target
-currentReviewTitle.classList.remove="is-active"
+    event.preventDefault()
+    var currentReviewTitle=event.target
+    var currentReviewTitleId = currentReviewTitle.getAttribute("id")
+    var currentParentClass = currentReviewTitle.parentNode.getAttribute("class")
+    var criticReviewClass =  criticReviewEl.parentNode.getAttribute("class")
+    var userReviewClass = userReviewEl.parentNode.getAttribute("class")
+
+    if(currentParentClass !== null && currentReviewTitleId === "critic-review") {
+        currentReviewTitle.parentNode.classList.add("is-active")
+        userReviewEl.parentNode.classList.remove("is-active")
+        criticBlkEl.classList.remove("hide")
+        userBlkEl.classList.add("hide")
+       
+    }else if(currentParentClass === null && currentReviewTitleId === "user-review") {
+        currentReviewTitle.parentNode.classList.add("is-active")
+        criticReviewEl.parentNode.classList.remove("is-active")
+        userBlkEl.classList.remove("hide")
+        criticBlkEl.classList.add("hide")
+
+    }else if(currentParentClass !== "" && currentReviewTitleId === "critic-review") {
+        currentReviewTitle.parentNode.classList.add("is-active")
+        userReviewEl.parentNode.classList.remove("is-active")
+        criticBlkEl.classList.remove("hide")
+        userBlkEl.classList.add("hide")
+        
+    }else if(currentParentClass === "" && currentReviewTitleId === "user-review") {
+        currentReviewTitle.parentNode.classList.add("is-active")
+        criticReviewEl.parentNode.classList.remove("is-active")
+        userBlkEl.classList.remove("hide")
+        criticBlkEl.classList.add("hide")
+
+    }
 
 }
 window.addEventListener("load", onloadReview)
-//displayMoviesEl.addEventListener("click", movieReview)
 
-selector.addEventListener("click", changeClass)
+reviewBlkEl.addEventListener("click", changeClass)
