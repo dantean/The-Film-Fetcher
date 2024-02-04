@@ -5,30 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Film Fetcher</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-<body>
+<body body style="background-image: url('assets/images/bg.png'); background-size: fit;">
     <div id="title">  
-    <p class="title is-2">The Film Fetcher</p>
-    <p class="subtitle is-5">By Rasmi R. and Joseph M.</p>
+    <p class="title is-2 is-full">The Film Fetcher</p>
+    <p class="subtitle is-5 is-full">By Rasmi R. and Joseph M.</p>
     </div>
+    <div class="section">
+            <div class="column is-mobile" id="intro">
+            <p>The Film Fetcher dynamically renders a list of recent movie releases on the web page. Clicking on a movie will bring you to a new page that displays information about the movie as well as critic and user reviews. A history of movies you've viewed is stored in local storage and rendered on the right-hand side of the screen on the home page. Styling was done using <a href="http://www.bulma.io">Bulma CDN.</a></p></div></div>
+<main>
+        <div class="columns">
+            <div class="column is-mobile" id="dashboard">
+                <p><img src=".\assets\images\favs.png"></p>
+            </div>
+            <div class="column is-mobile" id="history">
+                <p>Viewed history</p>
+                <ul>
+                    <li><a>movie 1</a></li>
+                    <li><a>movie 2</a></li>
+                    <li><a>movie 3</a></li>
+                    <li><a>movie 4</a></li>
+                    <li><a>movie 5</a></li>
+                </ul>
+            </div>
+      </div>    
+</main>
 
-    <div class="tile is-ancestor">
-        <div class="tile is-8" id="dashboard">
-            <div id="movie-dashboard" class="columns poster-grid is-flex-direction-row is-flex-wrap-wrap is-align-content-flex-start">
-        </div>
-      </div>
-        <div class="tile is-4">
-        <p>Viewed history</p>
-        </div>
-      <script src="./assets/js/displayDashboard.js"></script>
-      </div>
-    <main id="dashboard">
-        <div id="movie-dashboard" style="width:300px" class="columns poster-grid is-flex-direction-row is-flex-wrap-wrap is-align-content-flex-start">
-        </div> 
-
-       
-    </main>
-    <script src="./assets/js/displayMovies.js"></script>
 </body>
+<footer>
+    <script src="./assets/js/displayMovies.js"></script>
+</footer>
 </html>

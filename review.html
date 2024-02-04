@@ -1,41 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Movie Review</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
-<link rel="stylesheet" href="./assets/css/style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Film Fetcher</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-<body>
+<body body style="background-image: url('assets/images/bg.png'); background-size: fit;">
+
+    <div id="title">  
+    <p class="title is-2 is-full">The Film Fetcher</p>
+    <p class="subtitle is-5 is-full">By Rasmi R. and Joseph M.</p>
+    </div>
 <main>
-<div id="display-review">
-    <section class="hero is-info is-small">
-        <div class="hero-body">
-            <section class="columns" id="review-body">
-            </section>
-        </div>
-      
-        <div class="hero-foot">
-          <nav class="tabs is-boxed is-fullwidth">
+    <div class="columns">
+      <div class="column is-mobile" id="movie-details">
+          <p><img src="/assets/images/details.png"></p>
+      </div>
+      <div class="column is-mobile">
+          <nav class="tabs is-boxed">
             <div class="container" id="selector">
               <ul>
                 <li class="is-active" id="critic-review">
                   <a href="#critic-review">Critic Review</a>
                 </li>
                 <li id="user-review">
-                  <a>User Review</a>
+                   <a>User Review</a>
                 </li>
-              </ul>
-              
-            </div>
-          </nav>
-          
-        </div>
-      </section>
-      <article><p class="subtitle" id="#critic-review">Review goes here.......</p></article>
-</div>
+                </ul>
+              </div>
+            </nav>
+      </div>
+    </div>
 
-   </main>
-    <script src="./assets/js/movieReview.js"></script>
+</main>
+
 </body>
-
+<footer>
+</footer>
 </html>
