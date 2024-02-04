@@ -33,14 +33,3 @@
     color: inherit; 
     text-decoration: none; 
 }
-
-
-.poster-tile img {
-    width: 25px; 
-    height: auto; 
-}
-
-.custom-link, .custom-link:visited, .custom-link:hover, .custom-link:active {
-    color: inherit; 
-    text-decoration: none; 
-}

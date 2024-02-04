@@ -15,6 +15,7 @@ function onloadReview(){
     if(movieString) {
     var movieName = movieString.replace(/\s+/g, '-')
     criticBlkEl.classList.remove("hide")
+    //userBlkEl.classList.add("hide")
 
     var url = `https://metacriticapi.p.rapidapi.com/movies/${movieName}?reviews=true`;
     //var url = `https://metacriticapi.p.rapidapi.com/movies/${movieName}`
@@ -39,7 +40,7 @@ function onloadReview(){
     </div>
     <div class="column">
         <h1 class="title has-text-left">${data.title}</h1>
-        <p class="subtitle"><h5 class="subtitle">Description :</h5> ${data.description}</p>
+        <p class="subtitle has-text-white has-text-left is-size-6">${data.description}</p>
         <p></p>
     </div>`
 
