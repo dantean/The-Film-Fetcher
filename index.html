@@ -7,34 +7,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-<body body style="background-image: url('assets/images/bg.png'); background-size: fit;">
+<body body style="background-image: url('assets/images/bg.png'); background-size: cover;">
     <div id="title">  
-    <p class="title is-2 is-full">The Film Fetcher</p>
+    <a href="index.html" class="custom link">
+    <p class="title is-2 is-full">The Film Fetcher</p></a>
     <p class="subtitle is-5 is-full">By Rasmi R. and Joseph M.</p>
     </div>
-    <div class="section">
-            <div class="column is-mobile" id="intro">
-            <p>The Film Fetcher dynamically renders a list of recent movie releases on the web page. Clicking on a movie will bring you to a new page that displays information about the movie as well as critic and user reviews. A history of movies you've viewed is stored in local storage and rendered on the right-hand side of the screen on the home page. Styling was done using <a href="http://www.bulma.io">Bulma CDN.</a></p></div></div>
+    <div class="section is-mobile" id="intro">
+        <p>The Film Fetcher dynamically renders a list of recent movie releases on the web page. Clicking on a movie will bring you to a new page that displays information about the movie as well as critic and user reviews. A history of movies you've viewed is stored in local storage and rendered on the right-hand side of the screen on the home page. Styling was done using <a href="http://www.bulma.io">Bulma CDN.</a></p></div>
+
 <main>
-        <div class="columns">
-            <div class="column is-mobile" id="dashboard">
-                <p><img src=".\assets\images\favs.png"></p>
-            </div>
-            <div class="column is-mobile" id="history">
+    <div class="columns">
+        <div id="movie-dashboard" class="column is-10">
+        </div>
+            <div class="column is-mobile is-2" id="history">
                 <p>Viewed history</p>
-                <ul>
-                    <li><a>movie 1</a></li>
-                    <li><a>movie 2</a></li>
-                    <li><a>movie 3</a></li>
-                    <li><a>movie 4</a></li>
-                    <li><a>movie 5</a></li>
-                </ul>
+
             </div>
-      </div>    
+    </div>
+ 
 </main>
 
 </body>
 <footer>
-    <script src="./assets/js/displayMovies.js"></script>
+    <script src="./assets/js/displayDashboard.js"></script>
+    <script src="./assets/js/history.js"></script>
 </footer>
 </html>
