@@ -1,12 +1,29 @@
 #dashboard {
-padding: 50px;
-
+    padding: 25px;
 }
 
-div {
-text-align: center;
+.subtitle {
+    color: white;
+    padding-bottom: 25px;
+    text-align: center;
 }
 
-.hide {
-    display: none;
+.title {
+    text-align: center;
+    padding-top: 15px;
+    color: turquoise;
+}
+
+#intro {
+    color: white;
+    padding-left: 30px;
+}
+
+#history {
+    color:white;
+    text-align: center;
+}
+
+#movie-dashboard {
+
 }
