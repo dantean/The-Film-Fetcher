@@ -1,15 +1,16 @@
+// variables to get data from the API and store it in local storage
+
 function displayMovieReview(event) {
     var currentMovieTile = event.target;
     var movieName = currentMovieTile.getAttribute('placeholder');
     var posterID = currentMovieTile.getAttribute('id');
-
-
     var viewedMovies = JSON.parse(localStorage.getItem('viewedMovies')) || [];
     viewedMovies.push({ name: movieName, posterID: posterID });
     localStorage.setItem('viewedMovies', JSON.stringify(viewedMovies));
-
     window.open(`./review.html?movie=${movieName}&posterid=${posterID}`);
 }
+
+// displays the stored data from above as a series of text links in an unordered list
 
 function loadViewedMovies() {
     var viewedMovies = JSON.parse(localStorage.getItem('viewedMovies')) || [];
