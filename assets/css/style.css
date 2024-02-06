@@ -29,6 +29,8 @@
     height: auto; 
 }
 
+/* used custom-link to make the "The Film Fetcher" text on every page to be a link back home, but does not change color or have the underline that a link normally has */
+
 .custom-link, .custom-link:visited, .custom-link:hover, .custom-link:active {
     color: inherit; 
     text-decoration: none; 
