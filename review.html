@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Film Fetcher</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body style="background-image: url('./assets/images/bg.png'); background-size: fit;">
+
+    <div id="title">  
+      <a href="index.html" class="custom link">
+        <p class="title is-2 is-full">The Film Fetcher</p></a>
+    <p class="subtitle is-5 is-full">By Rasmi R. and Joseph M.</p>
+    </div>
+<main>
+    <div class="columns">
+      <div class="column is-mobile" id="movie-details">
+         <p id="review-body"></p>
+      </div>
+      <div class="column is-mobile">
+          <nav class="tabs is-boxed">
+            <div class="container" id="selector">
+              <ul id="review-blk">
+                <li class="is-active">
+                  <a href="" id="critic-review">Critic Review</a>
+                </li>
+                <li>
+                   <a href="" id="user-review">User Review</a>
+                </li>
+                </ul>
+              </div>
+            </nav>
+            <article><p class="subtitle hide" id="critic-blk"></p><br></article>
+      <article><p class="subtitle hide" id="user-blk"></p></article>
+      </div>
+    </div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+<script src="./assets/js/movieReview.js"></script>
+</body>
+<footer>
+</footer>
+</html>
