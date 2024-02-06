@@ -29,11 +29,14 @@
     height: auto; 
 }
 
+/* used custom-link to make the "The Film Fetcher" text on every page to be a link back home, but does not change color or have the underline that a link normally has */
+
 .custom-link, .custom-link:visited, .custom-link:hover, .custom-link:active {
     color: inherit; 
     text-decoration: none; 
 }
 
+/* Tokens to display the scores and grades */
 .token {
     color:black;
     background-color:#FDFD96;
@@ -46,6 +49,7 @@
     padding:5px;
 }
 
+/* To display critic and user review content */
 .review-box {
     background-color: rgba(255,255,255,0.5);
     margin-right: 10px;
