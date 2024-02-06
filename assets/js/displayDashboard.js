@@ -21,14 +21,17 @@ function displayDashboard() {
 function displayMovieReview(event) {
     var currentMovieTile = event.target;
     var movieName = currentMovieTile.getAttribute('placeholder');
-    var posterID = currentMovieTile.getAttribute('id');
+    var posterID = currentMovieTile.getAttribute('id').split('.');
+    var imageID = posterID.pop()
+    var newimageID = posterID.join(".")
+console.log(imageID)
 
     var viewedMovies = JSON.parse(localStorage.getItem('viewedMovies')) || [];
     viewedMovies.push({ name: movieName, posterID: posterID });
     localStorage.setItem('viewedMovies', JSON.stringify(viewedMovies));
 
     // Redirect to the review page in the same window
-    window.location.href = `./review.html?movie=${movieName}&posterid=${posterID}`;
+    window.location.href = `./review.html?movie=${movieName}&posterid=${newimageID}`;
 }
 
 window.addEventListener("load", displayDashboard);
