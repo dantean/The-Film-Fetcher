@@ -6,19 +6,22 @@ var userReviewEl = document.getElementById("user-review")
 var criticBlkEl = document.getElementById("critic-blk")
 var userBlkEl = document.getElementById("user-blk")
 
+// Rendering the review about the selected movie on the review page
+
 function onloadReview(){
+
+    // Parse through the url and get the parameters 
     var urlParam = new URLSearchParams(window.location.search)
     var movieString = urlParam.get("movie")
     var posterID = urlParam.get("posterid")
-    console.log(movieString)
+    
     if(movieString) {
         var movieName = movieString.replace(/\s+/g, '-')
         criticBlkEl.classList.remove("hide")
 
+        // Making API request to retrieve review about the selected movie from the landing page
+
         var url = `https://metacriticapi.p.rapidapi.com/movies/${movieName}?reviews=true`
-        //var url = `https://metacriticapi.p.rapidapi.com/movies/${movieName}`
-        //var url = "https://metacriticapi.p.rapidapi.com/movies/the-lord-of-the-rings-the-return-of-the-king?reviews=true"
-        console.log(url)
         var options = {
             method: 'GET',
             headers: {
@@ -32,10 +35,11 @@ function onloadReview(){
             return response.json()
         })
         .then(function(data) {
-            console.log(data)
+            // Using momentJS cdn to convert ISO date time format
             var releaseDate = moment(data.releaseDate).format("MMM D, YYYY") 
             var userScore = data.userScore/10;
-            
+        
+            // Dynamically appending to the static html elements on the page
         reviewBodyEl.innerHTML = `<div class="column is-two-fifths">
             <img src="https://image.tmdb.org/t/p/original/${posterID}.jpg" style="width:200px;height:230px"/>
         </div>
@@ -46,10 +50,13 @@ function onloadReview(){
             <p class="has-text-white"><span class="title is-6">Released on: </span>${releaseDate}</p><hr><p class="has-text-white"><span class="title is-6 has-text-left">METASCORE</span><span class="has-text-weight-bold token">${data.metaScore}</span></span><br><br><progress class="progress is-info is-small" value="${data.metaScore}" max="100">${data.metaScore}%</progress></p><hr><p class="has-text-white"><span class="title is-6 has-text-left">USER SCORE</span><span class="has-text-weight-bold token">${userScore}</span><br><br><progress class="progress is-info is-small" value="${data.userScore}" max="100">${data.userScore}%</progress></p>
         </div>`
 
+             // Dynamically appending to the static html elements on the page
             for(var i=0; i < data.recentReviews.length; i++) {
                 var recentReviewsDate = moment(data.recentReviews[i].date).format("MMM D YYYY") 
                 criticBlkEl.innerHTML += `<div class="box review-box"><p><span class="title is-6 has-text-left has-text-weight-semibold">${data.recentReviews[i].name}, ${recentReviewsDate}, Grade: </span><span class="has-text-weight-semibold token token-review">${data.recentReviews[i].grade}</span></p><br><p class="subtitle is-size-6 has-text-left">${data.recentReviews[i].body}</p></div><br>`
             }
+
+            // Dynamically appending to the static html elements on the page
             for(var i=0; i < data.recentUserReviews.length; i++) {
                 var recentUserReviewsDate = moment(data.recentUserReviews[i].date).format("MMM D YYYY") 
                 userBlkEl.innerHTML += `<div class="box review-box"><p><span class="title is-6 has-text-left has-text-weight-semibold">${data.recentUserReviews[i].name}, ${recentUserReviewsDate}, Grade</span><span class="has-text-weight-semibold token token-review">${data.recentUserReviews[i].grade}</span></p><br><p class="subtitle is-size-6 has-text-left">${data.recentUserReviews[i].body}</p></div><br>`
@@ -58,6 +65,8 @@ function onloadReview(){
     }
 }
 
+// Displays the critic review and user review on the review page
+
 function displayReviews(event){
     event.preventDefault()
     var currentReviewTitle=event.target
@@ -65,6 +74,8 @@ function displayReviews(event){
     var currentParentClass = currentReviewTitle.parentNode.getAttribute("class")
     var criticReviewClass =  criticReviewEl.parentNode.getAttribute("class")
     var userReviewClass = userReviewEl.parentNode.getAttribute("class")
+
+    // Conditional statements to render the critic review and user review
 
     if(currentParentClass !== null && currentReviewTitleId === "critic-review") {
         currentReviewTitle.parentNode.classList.add("is-active")

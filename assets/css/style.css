@@ -34,6 +34,7 @@
     text-decoration: none; 
 }
 
+/* Tokens to display the scores and grades */
 .token {
     color:black;
     background-color:#FDFD96;
@@ -46,6 +47,7 @@
     padding:5px;
 }
 
+/* To display critic and user review content */
 .review-box {
     background-color: rgba(255,255,255,0.5);
     margin-right: 10px;
